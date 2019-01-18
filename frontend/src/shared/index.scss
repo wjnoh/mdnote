@@ -12,6 +12,9 @@ body,
 #root {
   height: 100%;
   overflow: hidden;
+  @include mobile {
+    overflow: auto;
+  }
 }
 
 .main {

@@ -23,6 +23,7 @@
       }
       .nav__toggle {
         display: none;
+        cursor: pointer;
         @include mobile {
           display: inherit;
         }

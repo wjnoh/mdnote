@@ -13,10 +13,14 @@
     background: transparent;
   }
   @include mobile {
-    position: absolute;
+    position: fixed;
     right: -300px;
     border: none;
     border-left: 1px solid $oc-gray-4;
+    transition: right 0.3s ease;
+    &.sidebar--active {
+      right: 0;
+    }
   }
   .sidebar__title {
     margin-top: 10px;
