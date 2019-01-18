@@ -1,6 +1,27 @@
 @import url("https://fonts.googleapis.com/css?family=Nanum+Gothic");
+@import "./_mediaQuery.scss";
+@import "./_color.scss";
 
 * {
   box-sizing: border-box;
   font-family: "Nanum Gothic", sans-serif !important;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
+.main {
+  height: calc(100% - 50px);
+  @include mobile {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .main__container {
+    height: 100%;
+    display: inline-flex;
+  }
 }

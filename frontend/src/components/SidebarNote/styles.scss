@@ -1,0 +1,33 @@
+@import "../../shared/_mediaQuery.scss";
+@import "../../shared/_color.scss";
+
+.sidebar__note {
+  border-bottom: 1px solid $oc-gray-4;
+  padding: 20px;
+  height: 130px;
+  cursor: pointer;
+  &.sidebar__note--active {
+    background-color: $oc-gray-2;
+  }
+  &:hover {
+    background-color: $oc-gray-2;
+  }
+  .sidebar-note__title {
+    display: block;
+    font-size: 15px;
+  }
+  .sidebar-note__content {
+    display: block;
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 1.25em;
+    height: 2.4em;
+    overflow: hidden;
+  }
+  .sidebar-note__date {
+    display: block;
+    margin-top: 10px;
+    font-size: 15px;
+    color: $oc-gray-6;
+  }
+}
