@@ -1,0 +1,46 @@
+@import "../../shared/_mediaQuery.scss";
+@import "../../shared/_color.scss";
+
+.editor {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw - 300px);
+  height: 100%;
+  @include tablet {
+    width: 100%;
+    border: none;
+  }
+  @include mobile {
+    width: 100%;
+    border: none;
+  }
+  .editor__top {
+    flex: 1;
+    overflow-y: auto;
+    background-color: black;
+    color: white;
+    min-height: 0;
+    @include mobile {
+      flex: 1 !important;
+    }
+  }
+  .editor__bottom {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+    @include mobile {
+      display: none;
+    }
+  }
+  .editor__separator {
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    cursor: row-resize;
+    top: 50%;
+    @include mobile {
+      display: none;
+    }
+  }
+}
