@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Navigation from "./components/Navigation";
 import SidebarNotes from "./components/SidebarNotes";
 import NoteView from "./components/NoteView";
+import Editor from "./components/Editor";
 
 class App extends Component {
   state = {
@@ -33,7 +34,8 @@ class App extends Component {
         <main className="main">
           <div className="main__container">
             <SidebarNotes isSidebarOn={isSidebarOn} />
-            <NoteView />
+            {/* <NoteView /> */}
+            <Editor />
           </div>
         </main>
       </>
