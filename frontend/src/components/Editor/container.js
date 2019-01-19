@@ -10,7 +10,6 @@ export default class Container extends Component {
     this.setState({
       topPercentage: (e.clientY - 50) / (window.innerHeight - 50)
     });
-    console.log(e.clientY, window.innerHeight);
   };
 
   handleMouseUp = e => {

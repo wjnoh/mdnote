@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import EditorPane from "../EditorPane";
+import PreviewPane from "../PreviewPane";
+
 import "./styles.scss";
 
 export default class Editor extends Component {
@@ -14,13 +17,13 @@ export default class Editor extends Component {
     };
 
     const separatorStyle = {
-      top: `${topPercentage * 100}% `
+      top: `${topPercentage * 100}%`
     };
 
     return (
       <section className="editor">
         <div className="editor__top" style={topStyle}>
-          Top
+          <EditorPane />
         </div>
         <div
           className="editor__separator"
@@ -28,7 +31,7 @@ export default class Editor extends Component {
           onMouseDown={handleSeparatorMouseDown}
         />
         <div className="editor__bottom" style={bottomStyle}>
-          Bottom
+          <PreviewPane />
         </div>
       </section>
     );

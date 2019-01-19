@@ -1,0 +1,44 @@
+@import "../../shared/_mediaQuery.scss";
+@import "../../shared/_color.scss";
+
+.editor-pane {
+  position: relative;
+  height: 100%;
+  .editor-pane__title {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 0 20px;
+    &:focus {
+      outline: none;
+    }
+  }
+  .editor-pane__code {
+    height: calc(100% - 50px);
+    .CodeMirror {
+      height: 100%;
+      padding: 10px 0;
+      line-height: 1.25em;
+      font-family: "Nanum Gothic Coding", monospace !important;
+    }
+  }
+  .editor-pane__button {
+    position: absolute;
+    z-index: 10;
+    width: 80px;
+    height: 40px;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  }
+}
