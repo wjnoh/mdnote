@@ -11,8 +11,10 @@ export default class SidebarNotes extends Component {
     return (
       <section className={isSidebarOn ? "sidebar sidebar--active" : "sidebar"}>
         <h1 className="sidebar__title">모든 노트(12)</h1>
+        <div className="sidebar__write">
+          <MdAdd />새 노트 쓰기
+        </div>
         <ul className="sidebar__notes">
-          <li className="sidebar__write">새 노트 쓰기</li>
           <SidebarNote />
           <SidebarNote />
           <SidebarNote />

@@ -7,11 +7,6 @@
   height: 100%;
   background-color: $oc-gray-0;
   border-right: 1px solid $oc-gray-4;
-  overflow-y: scroll;
-  &::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-  }
   @include mobile {
     position: fixed;
     right: -300px;
@@ -23,21 +18,38 @@
     }
   }
   .sidebar__title {
+    height: 100px;
     margin-top: 10px;
     font-size: 18px;
     padding: 20px;
   }
-  .sidebar__notes {
-    margin-top: 50px;
+  .sidebar__write {
+    height: 60px;
     border-top: 1px solid $oc-gray-4;
-    .sidebar__write {
-      padding: 20px;
-      cursor: pointer;
-      border-bottom: 1px solid $oc-gray-4;
-      &:hover {
-        background-color: $oc-indigo-6;
-        color: white;
-      }
+    display: flex;
+    padding-left: 20px;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+      background-color: $oc-indigo-6;
+      color: white;
+      fill: white;
+    }
+    svg {
+      position: relative;
+      margin-right: 5px;
+      bottom: 1px;
+      fill: inherit;
+    }
+  }
+  .sidebar__notes {
+    height: calc(100vh - 160px);
+    border-top: 1px solid $oc-gray-4;
+    overflow-y: scroll;
+    padding-bottom: 60px;
+    &::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
     }
   }
 }
