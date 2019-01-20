@@ -7,7 +7,7 @@ import "./styles.scss";
 
 export default class SidebarNotes extends Component {
   render() {
-    const { isSidebarOn, handleSidebarOff } = this.props;
+    const { isSidebarOn, handleSidebarOff, notes, loaded } = this.props;
 
     return (
       <section className={isSidebarOn ? "sidebar sidebar--active" : "sidebar"}>
@@ -20,15 +20,23 @@ export default class SidebarNotes extends Component {
           </Link>
         </div>
         <ul className="sidebar__notes">
-          <Link to="/note/1" key={1}>
-            <SidebarNote
-              note={{
-                title: "제목",
-                content: "내용",
-                created_at: "2019-01-20T13:33:32.797+09:00"
-              }}
-            />
-          </Link>
+          {loaded ? (
+            notes.map(note => {
+              return (
+                <Link to={`/note/${note.id}`} key={note.id}>
+                  <SidebarNote
+                    note={{
+                      title: note.title,
+                      content: note.content,
+                      created_at: note.created_at
+                    }}
+                  />
+                </Link>
+              );
+            })
+          ) : (
+            <div className="spinner" />
+          )}
         </ul>
       </section>
     );

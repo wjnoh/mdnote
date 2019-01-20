@@ -1,31 +1,20 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 
-import Navigation from "./components/Navigation";
-import SidebarNotes from "./components/SidebarNotes";
-import NoteView from "./components/NoteView";
-import Editor from "./components/Editor";
+import Navigation from "../Navigation";
+import SidebarNotes from "../SidebarNotes";
+import NoteView from "../NoteView";
+import Editor from "../Editor";
 
 class App extends Component {
-  state = {
-    isSidebarOn: false
-  };
-
-  handleSidebarOn = () => {
-    this.setState({
-      isSidebarOn: true
-    });
-  };
-
-  handleSidebarOff = () => {
-    this.setState({
-      isSidebarOn: false
-    });
-  };
-
   render() {
-    const { isSidebarOn } = this.state;
-    const { handleSidebarOn, handleSidebarOff } = this;
+    const {
+      isSidebarOn,
+      handleSidebarOn,
+      handleSidebarOff,
+      notes,
+      loaded
+    } = this.props;
     return (
       <>
         <Navigation
@@ -39,6 +28,8 @@ class App extends Component {
               isSidebarOn={isSidebarOn}
               handleSidebarOff={handleSidebarOff}
             />
+            <Route path="/note/write" render={() => <Editor />} />
+
             <Switch>
               <Route
                 exact
@@ -54,8 +45,25 @@ class App extends Component {
                   />
                 )}
               />
-              <Route path="/note/1" render={() => <NoteView />} />
-              <Route path="/note/write" render={() => <Editor />} />
+              {loaded
+                ? notes.map(note => {
+                    return (
+                      <Route
+                        key={note.id}
+                        path={`/note/${note.id}`}
+                        render={() => (
+                          <NoteView
+                            note={{
+                              title: note.title,
+                              content: note.content,
+                              created_at: note.created_at
+                            }}
+                          />
+                        )}
+                      />
+                    );
+                  })
+                : ""}
             </Switch>
           </div>
         </main>
