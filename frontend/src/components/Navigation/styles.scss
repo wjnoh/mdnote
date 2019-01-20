@@ -19,8 +19,11 @@
         list-style: none;
       }
       .nav__logo {
-        font-size: 18px;
-        cursor: pointer;
+        a {
+          font-size: 18px;
+          color: inherit;
+          text-decoration: none;
+        }
       }
       .nav__toggle {
         display: none;

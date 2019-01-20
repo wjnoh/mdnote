@@ -10,6 +10,11 @@ import "prismjs/components/prism-css.min.js";
 import "./styles.scss";
 
 export default class MarkdownRender extends Component {
+  componentDidMount() {
+    this.props.renderMarkdown();
+    Prism.highlightAll();
+  }
+
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.content !== this.props.content) {
       this.props.renderMarkdown();
