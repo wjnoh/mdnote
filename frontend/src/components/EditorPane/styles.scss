@@ -12,8 +12,15 @@
     color: white;
     font-size: 20px;
     padding: 0 30px;
+    font-family: "Nanum Gothic Coding", monospace;
     &:focus {
       outline: none;
+    }
+    @include tablet {
+      padding: 0 20px;
+    }
+    @include mobile {
+      padding: 0 20px;
     }
   }
   .editor-pane__code {
@@ -22,7 +29,13 @@
       height: 100%;
       padding: 10px;
       line-height: 1.5em;
-      font-family: "Nanum Gothic Coding", monospace !important;
+      font-family: "Nanum Gothic Coding", monospace;
+      @include tablet {
+        padding: 10px 0;
+      }
+      @include mobile {
+        padding: 10px 0;
+      }
     }
   }
   .editor-pane__button {
@@ -32,13 +45,16 @@
     height: 40px;
     bottom: 20px;
     right: 20px;
-    background-color: transparent;
-    border: 2px solid white;
+    background-color: $oc-indigo-6;
     color: white;
+    border: none;
     font-size: 15px;
     cursor: pointer;
     &:focus {
       outline: none;
+    }
+    &:hover {
+      background-color: $oc-indigo-7;
     }
   }
 }

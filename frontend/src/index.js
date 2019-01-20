@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import "reset-css";
+// import "reset-css";
 import "./shared/index.scss";
 
 // redux

@@ -7,6 +7,8 @@
   font-weight: bold;
   margin-bottom: 30px;
   line-height: 1.5;
+  text-align: center;
+  font-family: "Nanum Gothic Coding", monospace;
 }
 
 .markdown-body {
@@ -17,6 +19,7 @@
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
+  font-family: "Nanum Gothic Coding", monospace;
 }
 
 .markdown-body .pl-c {
@@ -178,7 +181,7 @@
 .markdown-body code,
 .markdown-body kbd,
 .markdown-body pre {
-  font-family: monospace, monospace;
+  font-family: inherit;
   font-size: 1em;
 }
 
@@ -328,16 +331,14 @@
 }
 
 .markdown-body code {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
-    monospace;
+  font-family: inherit;
   font-size: 12px;
 }
 
 .markdown-body pre {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
-    monospace;
+  font-family: inherit;
   font-size: 12px;
 }
 
