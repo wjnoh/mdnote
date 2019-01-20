@@ -17,7 +17,13 @@ export default class Editor extends Component {
     };
 
     const separatorStyle = {
-      top: `${topPercentage * 100}%`
+      // 20% 아래로는 못줄이게 한다.
+      top:
+        topPercentage * 100 > 20
+          ? topPercentage * 100 < 80
+            ? `${topPercentage * 100}%`
+            : "80%"
+          : "20%"
     };
 
     return (

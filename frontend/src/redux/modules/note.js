@@ -50,7 +50,7 @@ function addNote(payload) {
 // initial state
 
 const initialState = {
-  notes: {},
+  notes: [],
   loaded: false
 };
 

@@ -20,7 +20,7 @@
     overflow-y: auto;
     background-color: black;
     color: white;
-    min-height: 0;
+    min-height: 20%;
     @include mobile {
       flex: 1 !important;
     }
@@ -28,7 +28,7 @@
   .editor__bottom {
     flex: 1;
     overflow-y: auto;
-    min-height: 0;
+    min-height: 20%;
     @include mobile {
       display: none;
     }

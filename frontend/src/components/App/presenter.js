@@ -39,7 +39,7 @@ class App extends Component {
                     note={{
                       title: "Mdnote",
                       content:
-                        "마크다운 노트, Mdnote에 방문하신 것을 환영합니다.",
+                        '## 새로운 마크다운 노트\n> 반갑습니다!\n\n```javascript\nconsole.log("Hello Mdnote!");\n```',
                       created_at: "2019-01-20T13:33:32.797+09:00"
                     }}
                   />
