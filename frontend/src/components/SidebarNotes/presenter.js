@@ -25,7 +25,7 @@ export default class SidebarNotes extends Component {
               note={{
                 title: "제목",
                 content: "내용",
-                created_at: "2019년 01월 20일"
+                created_at: "2019-01-20T13:33:32.797+09:00"
               }}
             />
           </Link>
