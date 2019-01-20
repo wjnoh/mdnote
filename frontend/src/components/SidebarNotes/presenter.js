@@ -12,7 +12,7 @@ export default class SidebarNotes extends Component {
     return (
       <section className={isSidebarOn ? "sidebar sidebar--active" : "sidebar"}>
         <h1 className="sidebar__title">
-          <Link to="/">모든 노트(12)</Link>
+          <Link to="/">모든 노트({Object.keys(notes).length})</Link>
         </h1>
         <div className="sidebar__write" onClick={handleSidebarOff}>
           <Link to="/note/write">
@@ -21,19 +21,21 @@ export default class SidebarNotes extends Component {
         </div>
         <ul className="sidebar__notes">
           {loaded ? (
-            notes.map(note => {
-              return (
-                <Link to={`/note/${note.id}`} key={note.id}>
-                  <SidebarNote
-                    note={{
-                      title: note.title,
-                      content: note.content,
-                      created_at: note.created_at
-                    }}
-                  />
-                </Link>
-              );
-            })
+            notes
+              .map(note => {
+                return (
+                  <Link to={`/note/${note.id}`} key={note.id}>
+                    <SidebarNote
+                      note={{
+                        title: note.title,
+                        content: note.content,
+                        created_at: note.created_at
+                      }}
+                    />
+                  </Link>
+                );
+              })
+              .reverse()
           ) : (
             <div className="spinner" />
           )}

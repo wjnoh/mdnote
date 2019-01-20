@@ -6,9 +6,22 @@ export default class Container extends Component {
     this.props.changeInput({ name: e.target.name, value: e.target.value });
   };
 
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.addNote({
+      title: this.props.title,
+      content: this.props.content
+    });
+    this.props.initialize();
+  };
+
   render() {
     return (
-      <EditorPane {...this.props} handleInputChange={this.handleInputChange} />
+      <EditorPane
+        {...this.props}
+        handleInputChange={this.handleInputChange}
+        handleSubmit={this.handleSubmit}
+      />
     );
   }
 }

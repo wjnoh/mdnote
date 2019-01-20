@@ -50,7 +50,7 @@ export default class EditorPane extends Component {
   }
 
   render() {
-    const { title, handleInputChange } = this.props;
+    const { title, handleInputChange, handleSubmit } = this.props;
 
     return (
       <div className="editor-pane">
@@ -63,7 +63,9 @@ export default class EditorPane extends Component {
           onChange={handleInputChange}
         />
         <div className="editor-pane__code" ref={ref => (this.editor = ref)} />
-        <button className="editor-pane__button">작성하기</button>
+        <button className="editor-pane__button" onClick={handleSubmit}>
+          작성하기
+        </button>
       </div>
     );
   }

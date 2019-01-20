@@ -31,10 +31,12 @@
   }
   .sidebar__title {
     height: 100px;
-    margin-top: 10px;
+    margin: 0;
     font-size: 18px;
     padding: 20px;
     font-weight: unset;
+    display: flex;
+    align-items: center;
     a {
       color: inherit;
       text-decoration: none;

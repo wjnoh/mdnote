@@ -1,10 +1,13 @@
 import Container from "./container";
 import { connect } from "react-redux";
-import { actionCreators } from "../../redux/modules/editor";
+import { actionCreators as EditorAction } from "../../redux/modules/editor";
+import { actionCreators as NoteAction } from "../../redux/modules/note";
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    changeInput: payload => dispatch(actionCreators.changeInput(payload))
+    initialize: () => dispatch(EditorAction.initialize()),
+    changeInput: payload => dispatch(EditorAction.changeInput(payload)),
+    addNote: payload => dispatch(NoteAction.addNote(payload))
   };
 };
 
