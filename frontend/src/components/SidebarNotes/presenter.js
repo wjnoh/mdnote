@@ -24,7 +24,11 @@ export default class SidebarNotes extends Component {
             notes
               .map(note => {
                 return (
-                  <Link to={`/note/${note.id}`} key={note.id}>
+                  <Link
+                    to={`/note/${note.id}`}
+                    key={note.id}
+                    onClick={handleSidebarOff}
+                  >
                     <SidebarNote
                       note={{
                         title: note.title,
