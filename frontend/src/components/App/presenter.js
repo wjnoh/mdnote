@@ -5,6 +5,7 @@ import Navigation from "../Navigation";
 import SidebarNotes from "../SidebarNotes";
 import NoteView from "../NoteView";
 import Editor from "../Editor";
+import LoginForm from "../LoginForm";
 
 class App extends Component {
   render() {
@@ -33,6 +34,7 @@ class App extends Component {
                 path="/note/:noteId"
                 render={({ match }) => <NoteView match={match} />}
               />
+              <Route path="/login" render={() => <LoginForm />} />
             </Switch>
           </div>
         </main>
