@@ -9,15 +9,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-const mapStateToProps = (state, ownProps) => ({
-  notes: state.note.notes,
-  loaded: state.note.loaded
-});
-
 // React-router와 Redux 함께 쓰려면 withRouter로 묶어야 한다.
 export default withRouter(
   connect(
-    mapStateToProps,
+    null,
     mapDispatchToProps
   )(Container)
 );

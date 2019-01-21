@@ -8,13 +8,7 @@ import Editor from "../Editor";
 
 class App extends Component {
   render() {
-    const {
-      isSidebarOn,
-      handleSidebarOn,
-      handleSidebarOff,
-      notes,
-      loaded
-    } = this.props;
+    const { isSidebarOn, handleSidebarOn, handleSidebarOff } = this.props;
     return (
       <>
         <Navigation
@@ -28,42 +22,17 @@ class App extends Component {
               isSidebarOn={isSidebarOn}
               handleSidebarOff={handleSidebarOff}
             />
-            <Route path="/note/write" render={() => <Editor />} />
-
             <Switch>
               <Route
                 exact
                 path="/"
-                render={() => (
-                  <NoteView
-                    note={{
-                      title: "Mdnote",
-                      content:
-                        '## 새로운 마크다운 노트\n> 반갑습니다!\n\n```javascript\nconsole.log("Hello Mdnote!");\n```',
-                      created_at: "2019-01-20T13:33:32.797+09:00"
-                    }}
-                  />
-                )}
+                render={({ match }) => <NoteView match={match} isMain={true} />}
               />
-              {loaded
-                ? notes.map(note => {
-                    return (
-                      <Route
-                        key={note.id}
-                        path={`/note/${note.id}`}
-                        render={() => (
-                          <NoteView
-                            note={{
-                              title: note.title,
-                              content: note.content,
-                              created_at: note.created_at
-                            }}
-                          />
-                        )}
-                      />
-                    );
-                  })
-                : ""}
+              <Route path="/note/write" render={() => <Editor />} />
+              <Route
+                path="/note/:noteId"
+                render={({ match }) => <NoteView match={match} />}
+              />
             </Switch>
           </div>
         </main>

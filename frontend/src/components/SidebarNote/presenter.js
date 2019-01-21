@@ -6,6 +6,7 @@ import "./styles.scss";
 export default class SidebarNote extends Component {
   render() {
     const { note } = this.props;
+    console.log("!");
     return (
       <li className="sidebar__note">
         <span className="sidebar-note__title">{note.title}</span>
