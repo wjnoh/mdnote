@@ -11,7 +11,10 @@ class SidebarNote extends Component {
     return (
       <li
         className={
-          location.pathname.split("/")[2].toString() === note.id.toString()
+          // 메인 페이지일 때 에러 방지
+          location.pathname.split("/")[2] === undefined
+            ? "sidebar__note"
+            : location.pathname.split("/")[2].toString() === note.id.toString()
             ? "sidebar__note sidebar__note--active"
             : "sidebar__note"
         }
