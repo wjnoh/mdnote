@@ -20,6 +20,10 @@ export default class Container extends Component {
     }
   };
 
+  componentWillUnmount() {
+    this.props.initialize();
+  }
+
   render() {
     return (
       <EditorPane

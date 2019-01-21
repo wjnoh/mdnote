@@ -1,20 +1,16 @@
 import React, { Component } from "react";
 import Moment from "moment";
-import { withRouter } from "react-router-dom";
 
 import "./styles.scss";
 
-class SidebarNote extends Component {
+export default class SidebarNote extends Component {
   render() {
-    const { note, location } = this.props;
+    const { note } = this.props;
 
     return (
       <li
         className={
-          // 메인 페이지일 때 에러 방지
-          location.pathname.split("/")[2] === undefined
-            ? "sidebar__note"
-            : location.pathname.split("/")[2].toString() === note.id.toString()
+          window.location.pathname === `/note/${note.id}`
             ? "sidebar__note sidebar__note--active"
             : "sidebar__note"
         }
@@ -30,5 +26,3 @@ class SidebarNote extends Component {
     );
   }
 }
-
-export default withRouter(SidebarNote);
