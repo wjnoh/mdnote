@@ -13,7 +13,7 @@ export default class NoteView extends Component {
         {isMain ? (
           // 메인페이지("/")일 경우 소개글 표시
           <div>
-            <span className="note__date">2019년 2월 20일</span>
+            <span className="note__date">2019년 1월 20일</span>
             <MarkdownRender
               title="Mdnote"
               content={

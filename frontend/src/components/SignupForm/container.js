@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import SignupForm from "./presenter";
+import LoginForm from "./presenter";
 
 export default class Container extends Component {
   render() {
-    return <SignupForm {...this.props} />;
+    return <LoginForm {...this.props} />;
   }
 }

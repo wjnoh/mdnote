@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import SidebarNote from "../SidebarNote";
-import MdAdd from "react-ionicons/lib/MdAdd";
 import { Link } from "react-router-dom";
 
 import "./styles.scss";
@@ -14,9 +13,12 @@ export default class SidebarNotes extends Component {
         <h1 className="sidebar__title">
           <Link to="/">모든 노트({Object.keys(notes).length})</Link>
         </h1>
-        <div className="sidebar__write" onClick={handleSidebarOff}>
-          <Link to="/note/write">
-            <MdAdd />새 노트 쓰기
+        <div className="sidebar__menu" onClick={handleSidebarOff}>
+          <Link className="sidebar__write" to="/note/write">
+            노트 쓰기
+          </Link>
+          <Link className="sidebar__login" to="/auth">
+            로그인
           </Link>
         </div>
         <ul className="sidebar__notes">
