@@ -1,14 +1,21 @@
 import React, { Component } from "react";
 import Moment from "moment";
+import { withRouter } from "react-router-dom";
 
 import "./styles.scss";
 
-export default class SidebarNote extends Component {
+class SidebarNote extends Component {
   render() {
-    const { note } = this.props;
-    console.log("!");
+    const { note, location } = this.props;
+
     return (
-      <li className="sidebar__note">
+      <li
+        className={
+          location.pathname.split("/")[2].toString() === note.id.toString()
+            ? "sidebar__note sidebar__note--active"
+            : "sidebar__note"
+        }
+      >
         <span className="sidebar-note__title">{note.title}</span>
         <span className="sidebar-note__content">{note.content}</span>
         <span className="sidebar-note__date">
@@ -20,3 +27,5 @@ export default class SidebarNote extends Component {
     );
   }
 }
+
+export default withRouter(SidebarNote);

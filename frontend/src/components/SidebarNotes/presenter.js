@@ -33,7 +33,8 @@ export default class SidebarNotes extends Component {
                       note={{
                         title: note.title,
                         content: note.content,
-                        created_at: note.created_at
+                        created_at: note.created_at,
+                        id: note.id
                       }}
                     />
                   </Link>
