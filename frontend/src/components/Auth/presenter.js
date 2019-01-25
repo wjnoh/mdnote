@@ -21,7 +21,7 @@ export default class Auth extends Component {
               className={isLogin ? "auth__toggle" : "auth__toggle"}
               onClick={isLogin ? handleSignup : handleLogin}
             >
-              {isLogin ? "로그인" : "회원가입"}
+              {isLogin ? "회원가입" : "로그인"}
             </div>
           </div>
           <div

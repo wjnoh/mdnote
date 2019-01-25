@@ -44,7 +44,7 @@
     }
   }
   .sidebar__menu {
-    height: 60px;
+    height: 50px;
     border-top: 1px solid $oc-gray-4;
     display: flex;
     cursor: pointer;
@@ -72,13 +72,13 @@
   .sidebar__notes {
     margin: 0;
     padding: 0;
-    height: calc(100vh - 210px);
+    height: calc(100vh - 200px);
     border-top: 1px solid $oc-gray-4;
-    overflow-y: scroll;
-    &::-webkit-scrollbar {
-      width: 0px;
-      background: transparent;
-    }
+    overflow-y: auto;
+    // &::-webkit-scrollbar {
+    //   width: 0px;
+    //   background: transparent;
+    // }
     li {
       list-style: none;
     }

@@ -1,2 +1,22 @@
 @import "../../shared/_mediaQuery.scss";
 @import "../../shared/_color.scss";
+
+.signup {
+  max-width: 370px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 0 30px;
+  input {
+    margin-bottom: 10px;
+  }
+  button {
+    margin-top: 25px;
+  }
+  .signup__title {
+    text-align: left;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-top: 45px;
+    margin-bottom: 30px;
+  }
+}
