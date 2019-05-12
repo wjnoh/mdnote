@@ -1,13 +1,13 @@
 import Container from "./container";
 import { connect } from "react-redux";
-import { actionCreators as EditorAction } from "../../redux/modules/editor";
-import { actionCreators as NoteAction } from "../../redux/modules/note";
+import * as editorActionCreators from "../../redux/actionCreators/editor";
+import * as noteActionCreators from "../../redux/actionCreators/note";
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    initialize: () => dispatch(EditorAction.initialize()),
-    changeInput: payload => dispatch(EditorAction.changeInput(payload)),
-    addNote: payload => dispatch(NoteAction.addNote(payload))
+    initialize: () => dispatch(editorActionCreators.initialize()),
+    changeInput: payload => dispatch(editorActionCreators.changeInput(payload)),
+    fetchAddNote: () => dispatch(noteActionCreators.fetchAddNote())
   };
 };
 

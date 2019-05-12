@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 const mapStateToProps = (state, ownProps) => ({
   notes: state.note.notes,
-  loaded: state.note.loaded
+  showError: state.note.showError
 });
 
 export default connect(mapStateToProps)(Container);

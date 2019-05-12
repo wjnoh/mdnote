@@ -5,14 +5,14 @@ import Moment from "moment";
 import "./styles.scss";
 
 const NoteView = props => {
-  const { match, notes, loaded, isMain } = props;
+  const { match, notes, isMain, showError } = props;
 
   return (
     <section className="note">
       {isMain ? (
         // 메인페이지("/")일 경우 소개글 표시
         <div>
-          <span className="note__date">2019년 1월 20일</span>
+          <span className="note__date">2019년 5월 12일</span>
           <MarkdownRender
             title="Mdnote"
             content={
@@ -20,7 +20,13 @@ const NoteView = props => {
             }
           />
         </div>
-      ) : loaded ? (
+      ) : notes[0] === undefined ? (
+        showError ? (
+          ""
+        ) : (
+          <div className="spinner" />
+        )
+      ) : (
         notes
           .filter(note => {
             return note.id.toString() === match.params.noteId.toString();
@@ -37,8 +43,6 @@ const NoteView = props => {
               </div>
             );
           })
-      ) : (
-        <div className="spinner" />
       )}
     </section>
   );

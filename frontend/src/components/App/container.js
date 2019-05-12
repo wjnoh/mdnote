@@ -19,8 +19,8 @@ export default class Container extends Component {
   };
 
   componentDidMount() {
-    const { getNotes } = this.props;
-    getNotes();
+    const { fetchNotes } = this.props;
+    fetchNotes();
   }
 
   render() {

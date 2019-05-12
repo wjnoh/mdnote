@@ -5,12 +5,22 @@ import { Link } from "react-router-dom";
 import "./styles.scss";
 
 const Sidebar = props => {
-  const { isSidebarOn, handleSidebarOff, notes, loaded } = props;
+  const { isSidebarOn, handleSidebarOff, notes, showError, error } = props;
 
   return (
     <section className={isSidebarOn ? "sidebar sidebar--active" : "sidebar"}>
       <h1 className="sidebar__title">
-        <Link to="/">모든 노트({Object.keys(notes).length})</Link>
+        <Link to="/">
+          {notes[0] === undefined ? (
+            showError ? (
+              `${error.status} ${error.statusText}`
+            ) : (
+              <div className="spinner" />
+            )
+          ) : (
+            `모든 노트(${Object.keys(notes).length})`
+          )}
+        </Link>
       </h1>
       <div className="sidebar__menu" onClick={handleSidebarOff}>
         <Link className="sidebar__write" to="/note/write">
@@ -21,7 +31,13 @@ const Sidebar = props => {
         </Link>
       </div>
       <ul className="sidebar__notes">
-        {loaded ? (
+        {notes[0] === undefined ? (
+          showError ? (
+            ""
+          ) : (
+            <div className="spinner" />
+          )
+        ) : (
           notes
             .map(note => {
               return (
@@ -42,8 +58,6 @@ const Sidebar = props => {
               );
             })
             .reverse()
-        ) : (
-          <div className="spinner" />
         )}
       </ul>
     </section>

@@ -1,11 +1,11 @@
 import Container from "./container";
 import { connect } from "react-redux";
-import { actionCreators } from "../../redux/modules/note";
 import { withRouter } from "react-router-dom";
+import * as noteActionCreators from "../../redux/actionCreators/note";
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    getNotes: () => dispatch(actionCreators.getNotes())
+    fetchNotes: () => dispatch(noteActionCreators.fetchNotes())
   };
 };
 

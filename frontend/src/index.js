@@ -8,18 +8,11 @@ import { BrowserRouter } from "react-router-dom";
 import "./shared/index.scss";
 
 // redux
-import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import reduxThunk from "redux-thunk";
-import rootReducer from "./redux/modules";
-
-const middlewares = [reduxThunk];
-
-const store = createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(...middlewares))
-);
+import configureStore from "./redux/configureStore";
+import rootSaga from "./redux/sagas";
+const store = configureStore();
+store.runSaga(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
