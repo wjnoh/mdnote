@@ -1,4 +1,4 @@
-# mdnote
+# MdNote
 
 > Markdown Note
 
@@ -10,7 +10,8 @@
 - React
 - React-router
 - Redux
-- Redux-thunk
+- Redux-saga
+- Axios
 - Codemirror
 
 ### Server
